@@ -1,0 +1,4 @@
+{
+  "_comment": "Global site data – would be exposed as {{site.imgDir}} in templates",
+  "imgDir": "./assets/img/"
+}

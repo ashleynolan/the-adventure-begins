@@ -1,0 +1,23 @@
+/**
+ * Links
+ * =================================
+ */
+
+a {
+	transition: $default-transition;
+
+	& {
+		color: $color-link-default;
+		text-decoration: none;
+	}
+
+	&:hover, &:focus {
+		color: $color-link-hover;
+		//text-decoration: underline;
+	}
+
+	&:active {
+		color: $color-link-active;
+		//text-decoration: underline;
+	}
+}

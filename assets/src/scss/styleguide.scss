@@ -1,0 +1,307 @@
+/**
+ * Kickoff Styleguide
+ * =================================
+ */
+@import "kickoff-utils"; // https://github.com/mrmartineau/kickoff-utils.scss
+@import "include-media"; // http://include-media.com
+@import "color-palette";
+@import "variables";
+@import "kickoff-grid";  // https://github.com/mrmartineau/kickoff-grid.css
+
+$styleguide-color-primary: $color-primary;
+$styleguide-type: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@import "styleguide/swatch";
+
+/**
+ * Styleguide styles
+ * Where possible, prefix all classnames with .sg
+ */
+body {
+	background-color: #fff;
+}
+
+/**
+ * Styleguide type styles
+ */
+.sg-interfaceType {
+	font-family: $styleguide-type;
+	font-weight: 300;
+}
+
+.sg-interfaceType--subtle {
+	color: #888;
+}
+
+.sg-sectionHeading {
+	@extend .sg-interfaceType;
+	color: $styleguide-color-primary;
+}
+
+
+/**
+ * Styleguide navigation style
+ */
+
+/**
+ * Styleguide .page styles
+ */
+.sg-page {
+	overflow: hidden;
+	padding: 8% 0;
+}
+
+.sg-page--start {
+	background-color: $styleguide-color-primary;
+	padding: 70px 0 60px;
+	color: #fff;
+}
+
+.sg-spacer {
+	padding: 20px;
+}
+
+.sg-footer {
+	background-color: #181830;
+	color: #fff;
+	padding: 30px;
+	margin-top: 30px;
+	font-family: $font-family-mono;
+	@include ko-font-size(12);
+
+	h1 {
+		margin-bottom: .2em;
+	}
+
+	a {
+		color: #fff;
+		border-bottom: 2px dashed rgba(#fff, .3);
+
+		&:hover {
+			border-bottom: 2px solid #fff;
+		}
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.sg-kickoffLogo {
+	width: 200px;
+	height: 60px;
+	color: #fff;
+}
+
+.sg-logo {
+	padding: 1em;
+	text-align: center;
+	color: $color-primary;
+
+	&--dark {
+		background-color: #000;
+		color: #fff;
+	}
+
+	svg {
+		max-width: 100%;
+	}
+}
+
+
+/**
+ * Typography
+ */
+.sg-type {
+	margin-bottom: 1em;
+	overflow-x: auto;
+}
+
+code {
+	border: 0;
+	background-color: transparent;
+	@include ko-font-size(12);
+}
+
+@mixin ko-sgTypeTest($size) {
+	.sg-type-item {
+		@include ko-font-size($size);
+
+		&:after {
+			content: '@include ko-font-size(#{$size}) / #{type($size)}px';
+			@include ko-font-size(micro);
+			display: block;
+			font-weight: normal;
+			font-family: $font-family-mono;
+			opacity: .6;
+		}
+	}
+
+	code {
+	}
+}
+
+
+.sg-type-micro {
+	@include ko-sgTypeTest(micro);
+}
+.sg-type-smallest {
+	@include ko-sgTypeTest(smallest);
+}
+.sg-type-smaller {
+	@include ko-sgTypeTest(smaller);
+}
+.sg-type-small {
+	@include ko-sgTypeTest(small);
+}
+.sg-type-base {
+	@include ko-sgTypeTest(base);
+}
+.sg-type-mid {
+	@include ko-sgTypeTest(mid);
+}
+.sg-type-large {
+	@include ko-sgTypeTest(large);
+}
+.sg-type-largest {
+	@include ko-sgTypeTest(largest);
+}
+.sg-type-jumbo {
+	@include ko-sgTypeTest(jumbo);
+}
+
+.sg-typeSpecimen {
+	margin-bottom: 0;
+	margin-top: 0;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+
+	&:after {
+		display: block;
+		@extend .sg-interfaceType;
+		@extend .sg-interfaceType--subtle;
+		@include ko-font-size(16);
+		margin-top: 5px;
+		border-top: 1px solid #ddd;
+		font-weight: normal;
+	}
+}
+
+// h1.typeSpecimen:after { content: "Font stack: #{$font-family-headings}"; }
+// p.typeSpecimen:after  { content: "Font stack: #{$font-family-base}"; }
+
+.sg-typeSpecimen--primary {
+	@include ko-font-size(30);
+	font-family: $font-family-base;
+}
+
+.sg-typeSpecimen--secondary {
+	@include ko-font-size(30);
+	font-family: $font-family-alt;
+}
+
+.sg-typeSpecimen--giant {
+	@include ko-font-size(120);
+	line-height: 1;
+}
+
+
+/**
+ * Icons
+ */
+.icon-sg {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.sg-favicon {
+	padding: 5px;
+
+	img {
+		vertical-align: middle;
+		margin-right: 15px;
+	}
+}
+
+.sg-hr {
+	height: 3px;
+	margin: ($baseline * 2) 0;
+}
+
+.sg-hr--subtle {
+	height: 3px;
+	background-color: fade-out($hr-color, .6)
+}
+
+@mixin ko-sgVar($var) {
+	line-height: 2;
+	font-family: $font-family-mono;
+	border-bottom: 1px solid rgba(#000, .1);
+	@include ko-font-size(12);
+
+	strong {
+		opacity: .6;
+		text-transform: uppercase;
+		display: block;
+		user-select: none;
+
+		@include media('>mid') {
+			width: 20%;
+			display: inline-block;
+		}
+	}
+
+	&:after {
+		content: '#{$var}';
+	}
+}
+
+.sg-var-item {
+	color: $color-secondary;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.sg-var--baseFontSize {
+	@include ko-sgVar($font-size-base);
+}
+
+.sg-var--leadingBase {
+	@include ko-sgVar($leading-base);
+}
+
+.sg-var--typeScale {
+	@include ko-sgVar($type-scale);
+}
+
+.sg-var--fontFamilyMono {
+	@include ko-sgVar($font-family-mono);
+}
+
+.sg-var--fontFamilySans {
+	@include ko-sgVar($font-family-sans);
+}
+
+.sg-var--fontFamilySerif {
+	@include ko-sgVar($font-family-serif);
+}
+
+.sg-var--breakpoints {
+	@include ko-sgVar($breakpoints);
+}
+
+.sg-var--layoutWidth {
+	@include ko-sgVar($layout-max-width);
+}
+
+.sg-var--gridColumns {
+	@include ko-sgVar($grid-column-count);
+}
+
+.sg-var--gridGutter {
+	@include ko-sgVar($grid-gutter-width);
+}
