@@ -10,14 +10,12 @@ a {
 		color: $color-link-default;
 		text-decoration: none;
 	}
+	.l-section &:not(.btn) {
+		text-decoration: underline;
+	}
 
 	&:hover, &:focus {
 		color: $color-link-hover;
-		//text-decoration: underline;
-	}
-
-	&:active {
-		color: $color-link-active;
-		//text-decoration: underline;
+		cursor: pointer;
 	}
 }

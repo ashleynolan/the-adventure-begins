@@ -61,7 +61,7 @@ h6 {
 	line-height: $line-height-headings;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
 	margin-top: 0;
-	margin-bottom: $baseline;
+	margin-bottom: 12px;
 
 	small {
 		font-size: 60%;
@@ -85,6 +85,7 @@ h2,
 .h2,
 .beta {
 	@include ko-font-size(large);
+	margin-bottom: $baseline;
 }
 
 h3,

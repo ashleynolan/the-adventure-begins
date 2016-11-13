@@ -22,7 +22,7 @@ body {
 .masthead {
 	display: flex;
 	flex-direction: column;
-	background-color: #62929E;
+	background-color: $teal;
 }
 	.masthead-title {
 		font-weight: bold;
@@ -59,7 +59,8 @@ body {
 	}
 }
 .l-section--full {
-	height: 80vh;
+	height: 90vh;
+	height: calc(100vh - #{$nav-height});
 	min-height: 560px;
 }
 
@@ -67,41 +68,102 @@ body {
 	padding: 10px 0;
 	text-align: center;
 	line-height: 0;
-}
-
-
-.filmstrip {
-	// background-image: linear-gradient(90deg, transparent 68%, rgba(255,255,255,1) 50%);
-	// background-size: 20px 60px;
 	background-color: #fff;
 
-	// border-top: 10px solid #000;
-	// border-bottom: 10px solid #000;
-
 	& img {
-		border-left: 20px solid #fff;
-		border-right: 20px solid #fff;
+		@include media('<mid') {
+			max-height: 200px;
+		}
 	}
 }
-.filmstrip-container {
-	// border-top: 10px solid #000;
-	// border-bottom: 10px solid #000;
-	// background-color: #fff;
+
+.l-imgSection--multiple {
+	& > img {
+		&:first-child {
+			margin-right: 20vw;
+		}
+	}
+}
+
+
+.subtext {
+	p {
+		margin-bottom: 0;
+	}
 }
 
 
 .bg-primary {
-	background-color: #fff1c5;
+	background-color: $yellow;
 }
 .bg-secondary {
 	background-color: $peach;
+}
+.bg-dark {
+	background-color: $gray--light;
+}
+.bg-dark--alt {
+	background-color: $teal;
+
+	& a {
+		color: #000;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color-link-light;
+		}
+	}
 }
 
 .svg-tree {
 	width: 100%;
 	height: auto;
 }
+.heartTree {
+	position: relative;
+}
+	.sunnies {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 98%;
+		overflow: hidden;
+	}
+		.sunnies-flower {
+			position: absolute;
+			bottom: -12.5%;
+			transition: all 500ms ease-in-out;
+
+			.heartTree:hover & {
+				bottom: -4%;
+			}
+		}
+		.sunnies-flower-1 {
+			left: 15%;
+		}
+		.sunnies-flower-2 {
+			bottom: -8.5%;
+			right: 33%;
+
+			.heartTree:hover & {
+				bottom: 0%;
+			}
+		}
+		.sunnies-flower-3 {
+			right: 16%;
+			bottom: -17.5%;
+
+			.heartTree:hover & {
+				bottom: -9%;
+			}
+		}
 
 .l-pad--top {
 	padding-top: 100px;
+}
+
+
+.imgEffect {
+	border-radius: 20%;
 }

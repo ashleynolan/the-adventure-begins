@@ -11,16 +11,19 @@
  */
 
 // Generic colors
-$blue                         : #288ad6;
+$blue                         : #40798c;
 $green                        : #16c98d;
 $red                          : #fa5e5b;
-$yellow                       : #feef6d;
+$yellow                       : #fff1c5;
 $orange                       : #fe7c08;
 $pink                         : #ff708e;
 $purple                       : #8e44ad;
 $gray                         : #8e9697;
 $gray--dark                   : #333;
+$gray--light                  : #b8bac8;
 $white                        : #fff;
+
+
 
 $peach                        : #fcd8ba;
 $teal                         : #62929e;
@@ -45,13 +48,15 @@ $color-link-visited           : $color-link-default;
 $color-link-hover             : darken($color-link-default, 20%);
 $color-link-active            : darken($color-link-default, 20%);
 
+$color-link-light             : $yellow;
+
 // Text Selection
 $color-selection              : #fff;
 $color-selection-bg           : $color-primary;
 
 
 // <hr> border color
-$hr-color                     : lighten(#000, 70%);
+$hr-color                     : lighten(#000, 20%);
 
 // 3rd party brand colors - find more at brandcolors.net
 $color-twitter                : #55acee;
