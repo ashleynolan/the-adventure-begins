@@ -14,15 +14,26 @@ body {
  * Default layout container
  */
 .l-container {
+	position: relative;
 	width: 90%;
 	max-width: $layout-max-width + px;
 	margin: 0 auto;
 }
 
+.section-img--directions {
+	background: url('#{$img-path}/taxi.jpg') no-repeat center center;
+	filter: sepia(1) opacity(30%);
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
 .masthead {
 	display: flex;
 	flex-direction: column;
-	background-color: $teal;
 }
 	.masthead-title {
 		font-weight: bold;
@@ -45,7 +56,9 @@ body {
 	}
 
 .l-section {
-	padding: 40px 0;
+	padding: 80px 0;
+	position: relative;
+	border-top: 3px solid #000;
 
 	&:first-child {
 		margin-top: $nav-height;
@@ -57,7 +70,16 @@ body {
 			margin-top: 0;
 		}
 	}
+
 }
+	.l-section h3,
+	.title-alt {
+		font-family: 'PT Sans', sans-serif;
+		font-weight: 700;
+		text-transform: uppercase;
+		@include ko-font-size(17);
+	}
+
 .l-section--full {
 	height: 90vh;
 	height: calc(100vh - #{$nav-height});
@@ -65,6 +87,7 @@ body {
 }
 
 .l-imgSection {
+	border-top: 3px solid #000;
 	padding: 10px 0;
 	text-align: center;
 	line-height: 0;
@@ -76,6 +99,24 @@ body {
 		}
 	}
 }
+	.l-imgSection--webpics {
+		padding: 30px 0;
+		background-color: #C2C2C2;
+
+		& a {
+			display: inline-block;
+
+			& div {
+				transition: all 250ms ease-out;
+			}
+
+			& div,
+			& div:before,
+			& img {
+				border-radius: 20px;
+			}
+		}
+	}
 
 .l-imgSection--multiple {
 	& > img {
@@ -83,6 +124,34 @@ body {
 			margin-right: 20vw;
 		}
 	}
+}
+
+.img-birds,
+.img-heart,
+.img-heart--2 {
+	position: absolute;
+}
+.img-heart {
+	right: -1vw;
+	top: 380px;
+}
+.img-heart--2 {
+	right: -4vw;
+	top: 630px;
+
+	@include media('<wide') {
+		right: 0;
+	}
+}
+.img-heart--3 {
+	transform: scaleX(-1) rotate(13deg);
+	left: -4vw;
+	top: 460px;
+}
+.img-birds {
+	right: 0px;
+	top: 0;
+	width: 100px;
 }
 
 
@@ -114,6 +183,12 @@ body {
 		}
 	}
 }
+.bg-light {
+	background-color: lighten($teal, 5%);
+}
+.bg-light--alt {
+	background-color: #b3d4dd;
+}
 
 .svg-tree {
 	width: 100%;
@@ -135,7 +210,8 @@ body {
 			bottom: -12.5%;
 			transition: all 500ms ease-in-out;
 
-			.heartTree:hover & {
+			.heartTree:hover &,
+			.heartTree.is-active & {
 				bottom: -4%;
 			}
 		}
@@ -146,7 +222,8 @@ body {
 			bottom: -8.5%;
 			right: 33%;
 
-			.heartTree:hover & {
+			.heartTree:hover &,
+			.heartTree.is-active & {
 				bottom: 0%;
 			}
 		}
@@ -154,7 +231,8 @@ body {
 			right: 16%;
 			bottom: -17.5%;
 
-			.heartTree:hover & {
+			.heartTree:hover &,
+			.heartTree.is-active & {
 				bottom: -9%;
 			}
 		}
@@ -165,5 +243,13 @@ body {
 
 
 .imgEffect {
-	border-radius: 20%;
+	display: block;
+	margin: 0px auto;
+	border: 10px solid #fff;
+	box-shadow: 0px 0px 0px 2px #000;
+	filter: brightness(120%);
+}
+
+.section-faq h3 {
+	margin-top: $baseline * 1.5;
 }

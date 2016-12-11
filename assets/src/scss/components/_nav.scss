@@ -1,13 +1,18 @@
 $nav-link-color: $white;
 
+header {
+	position: relative;
+	z-index: 100;
+}
+
 .nav-global {
 	position: fixed;
-	z-index: 100;
+	z-index: 110;
 	width: 100%;
 	background-color: $gray--dark;
 	padding: 4px 0;
 	font-family: $font-family-playful;
-	@include ko-font-size(mid);
+	@include ko-font-size(midLarge);
 	color: $white;
 
 	@include media('<narrow') {

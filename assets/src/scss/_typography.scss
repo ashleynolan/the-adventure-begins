@@ -249,10 +249,16 @@ samp {
 
 // Horizontal rules
 hr {
-	margin: ($baseline) 0;
+	margin: ($baseline * 1.5) auto;
 	border: 0;
-	height: 1px;
-	background-color: $hr-color;
+	height: 20px;
+	width: 100%;
+	background: url('#{$img-path}/separator.png') no-repeat center center;
+}
+
+hr.short {
+	margin: $baseline auto;
+	background-image: url('#{$img-path}/separator--short.png');
 }
 
 // https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/

@@ -40,8 +40,7 @@ gulp.task('serve', ['assemble', 'watcher'], () => {
 			webpackDevMiddleware(compiler, {
 				stats: 'errors-only',
 				publicPath: path.resolve(webpackConfig.output.publicPath),
-			}),
-			webpackHotMiddleware(compiler),
+			})
 		],
 
 		files: [

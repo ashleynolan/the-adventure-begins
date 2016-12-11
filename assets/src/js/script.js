@@ -17,14 +17,31 @@ import svg4everybody from 'svg4everybody'; // https://github.com/jonathantneal/s
 import 'console';
 import 'kickoff-welcome.js'; // The Kickoff message in the js console. Remove it if you like :)
 
-// our code
-// this is a test, uncomment the line below to try it
-// import moduleTest from './modules/module-test';
-
 window.$$ = $$; // add double-dollar to global scope
 
 // DOM ready code goes in here
 ready(() => {
 	// moduleTest(); // this is a test, uncomment this line to try it
 	svg4everybody();
+
+	bob();
 });
+
+
+
+function bob() {
+
+	console.log('test');
+
+	var rsvpBtn  = document.querySelectorAll('#btn-rsvp'),
+		sunnies = document.querySelector('.heartTree');
+
+	rsvpBtn[0].addEventListener('mouseover', function () {
+		sunnies.classList.add('is-active');
+	});
+
+	rsvpBtn[0].addEventListener('mouseout', function () {
+		sunnies.classList.remove('is-active');
+	});
+
+}

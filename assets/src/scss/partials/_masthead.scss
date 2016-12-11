@@ -2,4 +2,20 @@
  * Masthead
  * =================================
  */
-.masthead {}
+.masthead {
+	background-color: $teal;
+}
+
+.masthead-img {
+	position: absolute;
+	background: url('#{$img-path}/bg.jpg') no-repeat center center;
+	background-size: cover;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	filter: opacity(50%);
+}
+.masthead-title {
+	z-index: 999;
+}

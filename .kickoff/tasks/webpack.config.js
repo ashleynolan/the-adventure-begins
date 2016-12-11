@@ -9,7 +9,7 @@ const config = require('../config');
 const webpackConfig = {
 	entry: config.js.entryPoints,
 	output: {
-		path: path.resolve(`${config.js.distDir}`),
+		path: path.resolve(`${config.statix.dir}${config.statix.assetsDir}${config.statix.jsDir}`),
 		publicPath: path.resolve(`${config.js.distDir}/`) + '/',
 		filename: '[name].js',
 	},
