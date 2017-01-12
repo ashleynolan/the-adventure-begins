@@ -8,14 +8,25 @@
 
 .masthead-img {
 	position: absolute;
-	background: url('#{$img-path}/bg.jpg') no-repeat center center;
-	background-size: cover;
 	left: 0;
 	top: 0;
 	height: 100%;
 	width: 100%;
 	filter: opacity(50%);
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('#{$img-path}/bg--narrow.jpg');
+	background-position: left bottom;
+
+	@include media('>=narrowMid') {
+		background-image: url('#{$img-path}/bg--mid.jpg');
+		background-position: center center;
+	}
+	@include media('>=mid') {
+		background-image: url('#{$img-path}/bg.jpg');
+	}
 }
 .masthead-title {
-	z-index: 999;
+	z-index: $z-mid;
 }

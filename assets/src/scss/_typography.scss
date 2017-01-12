@@ -42,6 +42,9 @@ p {
 	margin-top: 0;
 	margin-bottom: $baseline;
 
+	&:last-child {
+		margin-bottom: 0;
+	}
 	// Measure - ideally about 65 chars per line
 	// max-width: #{type(base) * 30}px;
 }

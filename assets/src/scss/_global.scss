@@ -42,12 +42,17 @@ body {
 		padding-bottom: 150px;
 		margin: auto 0;
 
+		@include media('<mid') {
+			margin: 70px 0 auto;
+		}
+
 		@include media('<narrowMid') {
 			background-size: contain;
-			margin-left: 20px;
-			margin-right: 20px;
+			margin: 70px auto auto;
+			width: 300px;
 		}
 		@include media('<narrow') {
+			width: 200px;
 			padding-bottom: 120px;
 		}
 	}
@@ -56,9 +61,13 @@ body {
 	}
 
 .l-section {
-	padding: 80px 0;
+	padding: 40px 0;
 	position: relative;
 	border-top: 3px solid #000;
+
+	@include media('>=narrowMid') {
+		padding: 80px 0;
+	}
 
 	&:first-child {
 		margin-top: $nav-height;
@@ -66,11 +75,7 @@ body {
 		@include media('<mid') {
 			margin-top: $nav-height - 5;
 		}
-		@include media('<narrow') {
-			margin-top: 0;
-		}
 	}
-
 }
 	.l-section h3,
 	.title-alt {
@@ -81,9 +86,20 @@ body {
 	}
 
 .l-section--full {
+	min-height: 560px;
 	height: 90vh;
 	height: calc(100vh - #{$nav-height});
-	min-height: 560px;
+
+	&.masthead {
+		padding: 0;
+
+		@include media('<narrowMid') {
+			max-height: calc(557px + #{$nav-height});
+		}
+	}
+}
+.g--noStretch {
+	align-items: flex-end;
 }
 
 .l-imgSection {
@@ -238,7 +254,17 @@ body {
 		}
 
 .l-pad--top {
-	padding-top: 100px;
+	padding-top: 40px;
+
+	@include media('>=mid') {
+		padding-top: 40px;
+	}
+}
+
+.l-margin--bottom {
+	@include media('<narrowMid') {
+		margin-bottom: 25px;
+	}
 }
 
 

@@ -2,12 +2,12 @@ $nav-link-color: $white;
 
 header {
 	position: relative;
-	z-index: 100;
+	z-index: $z-high;
 }
 
 .nav-global {
 	position: fixed;
-	z-index: 110;
+	z-index: $z-high;
 	width: 100%;
 	background-color: $gray--dark;
 	padding: 4px 0;
@@ -16,7 +16,7 @@ header {
 	color: $white;
 
 	@include media('<narrow') {
-		display: none;
+		// display: none;
 	}
  }
 
